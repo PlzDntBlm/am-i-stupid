@@ -8,7 +8,8 @@ namespace AmIStupidApp
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Console.WriteLine($"SumOfAnArray([1, -2, 3, 4, 5]): {SumOfAnArray([1, -2, 3, 4, 5])}");
+            Console.WriteLine($"SumOfAnArray([1, -2, 3, 4, 5]): {SumOfAnArray(new int[] { 1, -2, 3, 4, 5 })}");
+            Console.WriteLine($"ReverseString(\"esrever\"): {ReverseString("esrever")}");
         }
 
         /// <summary>
@@ -28,6 +29,26 @@ namespace AmIStupidApp
                 acc += a[idx];
             }
             return acc;
+        }
+
+        /// <summary>
+        /// Function that takes a single string as input.
+        /// Returns the string in reverse order.
+        /// </summary>
+        /// <param name="input">String to be reversed.</param>
+        /// <returns></returns>
+        public static string ReverseString(string input)
+        {
+            if (input == null) return ""; // Handle null input
+            if (input.Length == 0) return ""; // Handle empty string
+
+            string reversed = "";
+
+            for (int idx = input.Length - 1; idx >= 0; idx--)
+            {
+                reversed += input[idx];
+            }
+            return reversed;
         }
     }
 }
