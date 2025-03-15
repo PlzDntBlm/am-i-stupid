@@ -11,6 +11,7 @@ namespace AmIStupidApp
             Console.WriteLine($"SumOfAnArray([1, -2, 3, 4, 5]): {SumOfAnArray(new int[] { 1, -2, 3, 4, 5 })}");
             Console.WriteLine($"ReverseString(\"esrever\"): {ReverseString("esrever")}");
             Console.WriteLine($"CountVowels(string input): {CountVowels("eiou")}");
+            FizzBuzz(15);
         }
         /// <summary>
         /// Function that takes an array of numbers as input.
@@ -77,6 +78,34 @@ namespace AmIStupidApp
             }
 
             return cnt;
+        }
+        /// <summary>
+        /// Prints the numbers from 1 to n, replacing multiples of 3 with "Fizz",
+        /// multiples of 5 with "Buzz", and multiples of both with "FizzBuzz".
+        /// </summary>
+        /// <param name="n">Upper limit of the FizzBuzz sequence.</param>
+        public static void FizzBuzz(int n)
+        {
+            for (int idx = 1; idx <= n; idx++)
+            {
+                if (idx % 3 == 0 && idx % 5 == 0)
+                {
+                    Console.Write("FizzBuzz");
+                }
+                else if (idx % 3 == 0)
+                {
+                    Console.Write("Fizz");
+                }
+                else if (idx % 5 == 0)
+                {
+                    Console.Write("Buzz");
+                }
+                else
+                {
+                    Console.Write(idx);
+                }
+                if (idx < n) Console.Write(",");
+            }
         }
     }
 }
